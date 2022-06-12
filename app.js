@@ -75,6 +75,10 @@ app.put('/campgrounds/:id', validateCampground, catchAsync(async (req, res) => {
     res.redirect(`/campgrounds/${campground._id}`)
 }));
 
+app.post('/campgrounds/:id/review', catchAsync(async(req, res)=>{
+    res.send('HELLO')
+}))
+
 app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
